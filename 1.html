@@ -7,41 +7,35 @@
   <title>FeastMeet</title>
   <style>
     :root {
-      /* 主色调 */
       --primary: #8C52FF;
       --primary-dark: #6E3AD9;
       --primary-light: #A875FF;
 
-      /* 霓虹色调 */
       --neon-pink: #FF2E93;
       --neon-blue: #00E9FF;
       --neon-green: #00FF85;
       --neon-yellow: #FFDE59;
 
-      /* 暗色背景 */
       --bg-dark: #121212;
       --bg-card: #1E1E1E;
       --bg-card-hover: #252525;
 
-      /* 文本颜色 */
+
       --text-primary: #FFFFFF;
       --text-secondary: rgba(255, 255, 255, 0.7);
       --text-tertiary: rgba(255, 255, 255, 0.5);
       --text-disabled: rgba(255, 255, 255, 0.3);
 
-      /* 边框与阴影 */
       --border-light: rgba(255, 255, 255, 0.1);
       --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.25);
       --shadow-neon: 0 0 15px rgba(140, 82, 255, 0.5);
-
-      /* 间距 */
+      
       --space-xs: 4px;
       --space-sm: 8px;
       --space-md: 16px;
       --space-lg: 24px;
       --space-xl: 32px;
 
-      /* 圆角 */
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 20px;
@@ -667,7 +661,7 @@
 
   <div class="app-container">
 
-    <!-- 启动/登录页 -->
+
     <div class="screen" id="login">
       <div class="full-content">
         <div style="height: 30%"></div>
@@ -1149,7 +1143,6 @@
       </div>
     </div>
 
-    <!-- 附近餐厅/地图页 -->
     <div class="screen" id="nearby">
       <div class="header">
         <div class="header-title">附近饭局</div>
@@ -1175,7 +1168,6 @@
           style="position: absolute; top: 40%; left: 70%; background: var(--neon-green); width: 16px; height: 16px; border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px var(--neon-green);">
         </div>
 
-        <!-- 当前选中地点 -->
         <div
           style="position: absolute; top: 65%; left: 50%; transform: translateX(-50%); background: white; border-radius: var(--radius-md); padding: var(--space-sm); width: 90%; box-shadow: var(--shadow-card);">
           <div style="display: flex;">
@@ -1228,7 +1220,6 @@
       </div>
     </div>
 
-    <!-- 消息列表页 -->
     <div class="screen" id="messages">
       <div class="header">
         <div class="header-title">消息</div>
@@ -1376,7 +1367,6 @@
       </div>
     </div>
 
-    <!-- 聊天页面 -->
     <div class="screen" id="chat">
       <div class="header">
         <button class="icon-button" onclick="window.location.href='#messages'">
@@ -1460,7 +1450,6 @@
       </div>
     </div>
 
-    <!-- 个人资料页 -->
     <div class="screen" id="profile">
       <div class="profile-header">
         <img src="https://randomuser.me/api/portraits/women/33.jpg" class="profile-avatar">
@@ -1633,7 +1622,6 @@
       </div>
     </div>
 
-    <!-- 加入成功页面 -->
     <div class="screen" id="join-success">
       <div
         style="height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-xl);">
@@ -1668,13 +1656,12 @@
 
   </div>
 
-  <!-- 加载状态栏和导航栏 -->
+
   <div id="status-bar"></div>
   <div id="nav-bar"></div>
 
-  <!-- 添加涟漪效果 -->
   <script>
-    // 加载状态栏和导航栏
+
     document.addEventListener('DOMContentLoaded', async () => {
       const statusBar = await fetch('../components/status-bar.html').then(r => r.text());
       const navBar = await fetch('../components/nav-bar.html').then(r => r.text());
@@ -1683,7 +1670,6 @@
       document.getElementById('nav-bar').innerHTML = navBar;
     });
 
-    // 添加涟漪效果
     document.querySelectorAll('.ripple-effect').forEach(button => {
       button.addEventListener('click', function (e) {
         const x = e.clientX - e.target.offsetLeft;
